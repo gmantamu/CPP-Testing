@@ -67,5 +67,9 @@ class testy {
         std::cout << std::endl;
     }
 
-
 };
+
+int main() {
+    testy f(5,9);
+    f.print();
+}
