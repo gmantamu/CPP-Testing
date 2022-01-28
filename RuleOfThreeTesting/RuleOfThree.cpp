@@ -3,12 +3,15 @@
 // 2: Copy Constructor  (Foo g = i;  Foo g(i);)
 // 3: Copy assignment Constructor (Foo i; Foo g; i = g)
 
+// Working with a class that points to a dynamically allocated array
+
 class testy {
     private:
         int* p;
         int size;
 
     public:
+    // Just the basic parameters of the class
     testy(int s, int f) {
         size = s;
         p = new int[size];
@@ -18,8 +21,27 @@ class testy {
         } 
     }
 
-    // Deconstructor
+    // Deconstructor (just to delete any dynamically allocated memory when we leave the scope with the object)
     ~testy() { delete [] p; }
 
-    //
+    // Copy COnstructor
+    // Foo g = i;   or    Foo g(i);
+    testy(const testy& other) {
+        size = other.size;
+        p = new int[size];
+
+        for(int i = 0; i < size; i++) {
+            p[i] = other.p[i];
+        }
+    }
+
+    // Copy assignment constructor
+    // Foo i; Foo g; i = g;
+    // i = j = g = f;
+    // j = j;
+    testy& operator=(const testy& other) {
+        
+    }
+
+
 };
