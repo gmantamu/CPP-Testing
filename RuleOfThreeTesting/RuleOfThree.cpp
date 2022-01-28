@@ -5,6 +5,8 @@
 
 // Working with a class that points to a dynamically allocated array
 
+#include <iostream>
+
 class testy {
     private:
         int* p;
@@ -40,7 +42,22 @@ class testy {
     // i = j = g = f;
     // j = j;
     testy& operator=(const testy& other) {
-        
+        if (this == &other) {
+            return *this;
+        }
+
+        if (size >= other.size) {
+            for(int i = 0; i < other.size; i++) {
+                p[i] = other.p[i];
+            }
+        }
+        else {
+            for(int i = 0; i < size; i++) {
+                p[i] = other.p[i];
+            }
+        }
+
+        return *this;
     }
 
 
