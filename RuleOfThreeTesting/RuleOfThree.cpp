@@ -72,4 +72,6 @@ class testy {
 int main() {
     testy f(5,9);
     f.print();
+    
+    return 0;
 }
