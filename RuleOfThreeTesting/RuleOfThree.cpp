@@ -60,5 +60,12 @@ class testy {
         return *this;
     }
 
+    void print() const {
+        for(int i = 0; i < size; i++) {
+            std::cout << p[i] << " ";
+        }
+        std::cout << std::endl;
+    }
+
 
 };
