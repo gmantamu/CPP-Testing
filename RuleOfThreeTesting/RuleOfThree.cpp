@@ -60,6 +60,7 @@ class testy {
         return *this;
     }
 
+    // A function to print the array that the class points to
     void print() const {
         for(int i = 0; i < size; i++) {
             std::cout << p[i] << " ";
