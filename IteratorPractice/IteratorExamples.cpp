@@ -17,5 +17,5 @@ int main() {
     for(std::vector<int>::iterator it = testvec.begin(); it != testvec.end(); it++) {
         std::cout << *it << std::endl;
     }
-    
+
 }
