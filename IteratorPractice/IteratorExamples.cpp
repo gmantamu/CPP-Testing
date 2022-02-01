@@ -7,4 +7,8 @@ int main() {
     for(int i = 0; i < testvec.size(); i++) {
         std::cout << testvec[i] << std::endl;
     }
+
+    for(int value : testvec) {
+        std::cout << value << std::endl;
+    }
 }
